@@ -7,7 +7,7 @@ import fs from "fs";
 export const register = async (req, res) => {
   try {
     const { name, email, password } = req.body;
-    const avatar= req.files.avatar.tempFilePath;
+    // const avatar= req.files.avatar.tempFilePath;
     // console.log(avatar)
 
     let user = await User.findOne({ email });
@@ -20,13 +20,13 @@ export const register = async (req, res) => {
 
     const otp = Math.floor(Math.random() * 10000);
 
-    const myCloud = await cloudinary.v2.uploader.upload(avatar, {
-      folder: "TodoAppp",
-    });
+    // const myCloud = await cloudinary.v2.uploader.upload(avatar, {
+    //   folder: "TodoAppp",
+    // });
 
     // const myCloud = await cloudinary.v2.uploader.upload(avatar);
 
-    fs.rmSync("./tmp", { recursive: true });
+    // fs.rmSync("./tmp", { recursive: true });
 
     user = await User.create({
       name,

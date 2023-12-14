@@ -20,6 +20,6 @@ app.use('/api/v1', User)
 
 
 app.get('/',(req,res)=>{
-    req.send("server is running")
+    res.send("server is running")
 
 })

@@ -8,7 +8,7 @@ export const register = async (req, res) => {
   try {
     const { name, email, password } = req.body;
     const avatar= req.files.avatar.tempFilePath;
-    console.log(avatar)
+    // console.log(avatar)
 
     let user = await User.findOne({ email });
 
@@ -26,7 +26,7 @@ export const register = async (req, res) => {
 
     // const myCloud = await cloudinary.v2.uploader.upload(avatar);
 
-    // fs.rmSync("./tmp", { recursive: true });
+    fs.rmSync("./tmp", { recursive: true });
 
     user = await User.create({
       name,

@@ -8,7 +8,7 @@ export const register = async (req, res) => {
   try {
     const { name, email, password } = req.body;
     const avatar= req.files.avatar.tempFilePath;
-    // console.log(avatar)
+    console.log(avatar)
 
     let user = await User.findOne({ email });
 

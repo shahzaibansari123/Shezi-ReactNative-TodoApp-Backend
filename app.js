@@ -11,7 +11,7 @@ app.use(express.urlencoded({extended: true}))
 app.use(cookieParser())
 app.use(fileUpload({
     limits: {fileSize: 50 * 1024 * 1024},
-    useTempFiles: true,
+    // useTempFiles: true,
     // tempFileDir: '/tmp'
     
 
